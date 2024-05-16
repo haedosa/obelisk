@@ -8,11 +8,19 @@
     url = "github:obsidiansystems/obelisk";
     flake = false;
   };
+  inputs.obelisk-dev = {
+    url = "github:obsidiansystems/obelisk/develop";
+    flake = false;
+  };
 
   outputs = inputs: inputs.flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = import inputs.nixpkgs { inherit system; };
       obelisk = pkgs.callPackage inputs.obelisk {
+        inherit system;
+        terms.security.acme.acceptTerms = true;
+      };
+      obelisk-dev = pkgs.callPackage inputs.obelisk-dev {
         inherit system;
         terms.security.acme.acceptTerms = true;
       };
@@ -25,5 +33,6 @@
         ];
       };
       packages.default = obelisk.command;
+      packages.obelisk-dev = obelisk-dev.command;
     });
 }

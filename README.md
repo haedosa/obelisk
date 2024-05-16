@@ -9,4 +9,10 @@
 nix run --impure
 ```
 
+## How to run obelisk-dev
+
+```bash
+nix run .#obelisk-dev --impure
+```
+
 See this [draft](https://github.com/obsidiansystems/obelisk/pull/964) for the initiative to move toward purer evaluation with nix flake.

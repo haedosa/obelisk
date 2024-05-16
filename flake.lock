@@ -50,11 +50,29 @@
         "type": "github"
       }
     },
+    "obelisk-dev": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711372106,
+        "narHash": "sha256-QWl9snRJ/lRjflN33EDi8c5wp5/e3u6CC3kvxjTKR5E=",
+        "owner": "obsidiansystems",
+        "repo": "obelisk",
+        "rev": "20ab7e0a9642ab97e8394c8c2daebb69eaf4218c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "obsidiansystems",
+        "ref": "develop",
+        "repo": "obelisk",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "obelisk": "obelisk"
+        "obelisk": "obelisk",
+        "obelisk-dev": "obelisk-dev"
       }
     },
     "systems": {
